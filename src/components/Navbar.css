@@ -1,0 +1,15 @@
+.navbar{
+    padding:5px;
+    font-weight:400;
+    background-color:#ccc;
+    
+}
+.git{
+    padding: 0px 10px;
+    font-size:40px;
+    
+}
+.navbar p{
+    display:flex;
+    align-items: center;
+}

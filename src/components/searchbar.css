@@ -1,0 +1,38 @@
+.form{
+     margin:30px;
+      color:#333;
+    /* display:flex;
+    justify-content:space-between; */
+}
+.input, .btn{
+    padding:5px;
+    border-radius:3px;
+    border:1px solid #ccc;
+    margin:30px 10px;
+    
+}
+.li {
+     padding:5px;
+    list-style: none;
+   
+}
+.li a{
+     text-decoration: none;
+      color:#333;
+    
+}
+.navba p{
+    display:flex;
+    align-items: center;
+    
+}
+@media(max-width:500px){
+.form{
+    text-align: center;
+
+}
+.navba p{
+     justify-content:center;
+
+}
+}

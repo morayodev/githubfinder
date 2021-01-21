@@ -1,0 +1,15 @@
+.Logo{
+    box-sizing: border-box;
+    /* height:100%; */
+     width:25%;
+    height:300px;
+    
+}
+
+@media(max-width:500px){
+.Logo{
+    width:100%;
+}
+}
+   
+
