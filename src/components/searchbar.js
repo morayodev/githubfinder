@@ -23,26 +23,25 @@ function SearchBar() {
    
   const handleSumbit = async (e) => {
     e.preventDefault();
-   
+
     const profile = await fetch(`https://api.github.com/users/${userName}`);
     const profileJson = await profile.json();
-     console.log(profileJson);
-      const repositories = await fetch(profileJson.repos_url);
-      const repoJson = await repositories.json();
-      //  console.log(repoJson)
-       if (profileJson) {
-      setData(profileJson)
-        setRepos(repoJson); 
-        //console.log(profileJson.message)
-        // if (profileJson.message==="Not Found"){
-        //   setError("User not found")
-        // } 
-        // else {
-        //     setData(profileJson);
-        //     setRepos(repoJson);
-         }
-      
-    };
+    console.log(profileJson);
+    const repositories = await fetch( `https:api.github.com/users/${userName}/repos?sort=updated`);
+   const repoJson = await repositories.json();
+    //  console.log(repoJson)
+    if (profileJson) {
+      setData(profileJson);
+      setRepos(repoJson);
+      //console.log(profileJson.message)
+      // if (profileJson.message==="Not Found"){
+      //   setError("User not found")
+      // }
+      // else {
+      //     setData(profileJson);
+      //     setRepos(repoJson);
+    }
+  };
    
 
   return (
