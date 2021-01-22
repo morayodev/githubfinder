@@ -18,15 +18,18 @@ function SearchBar() {
 
   const handleSearch = (e) => {
     setUsername(e.target.value);
+   
   };
+   
   const handleSumbit = async (e) => {
     e.preventDefault();
+   
     const profile = await fetch(`https://api.github.com/users/${userName}`);
     const profileJson = await profile.json();
-    console.log(profileJson);
+     console.log(profileJson);
       const repositories = await fetch(profileJson.repos_url);
       const repoJson = await repositories.json();
-      // console.log(repoJson)
+      //  console.log(repoJson)
        if (profileJson) {
       setData(profileJson)
         setRepos(repoJson); 
@@ -39,7 +42,6 @@ function SearchBar() {
         //     setRepos(repoJson);
          }
       
-    
     };
    
 
@@ -52,6 +54,7 @@ function SearchBar() {
           type="text"
           placeholder="Github Username"
           onChange={handleSearch}
+          value={userName}
         />
         <button className="btn">Search</button>
       </form>
@@ -78,7 +81,7 @@ function SearchBar() {
       </div>
 
       <h1>Repositories</h1>
-      {repos.map((repo) => (
+      {repos.slice(0,7).map((repo) => (
         <div key={repo.name}>
           <li className="li">
             <FaGithub />
