@@ -27,7 +27,7 @@ function SearchBar() {
     const profile = await fetch(`https://api.github.com/users/${userName}`);
     const profileJson = await profile.json();
     console.log(profileJson);
-    const repositories = await fetch( `https:api.github.com/users/${userName}/repos?sort=updated`);
+    const repositories = await fetch(`https:api.github.com/users/${userName}/repos?sort=updated`);
    const repoJson = await repositories.json();
     //  console.log(repoJson)
     if (profileJson) {
